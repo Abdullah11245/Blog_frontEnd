@@ -1,0 +1,14 @@
+.post_display h2{
+    font-weight: bold;
+    font-size: 24px;
+}
+.post_display blockquote{
+    padding-left: 12px;
+    padding-right: 12px;
+    border-left: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: auto;
+    font-style: italic;
+
+}

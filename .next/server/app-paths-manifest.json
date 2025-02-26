@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/writer/editor/page": "app/writer/editor/page.js",
+  "/detail/[postId]/page": "app/detail/[postId]/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/login/page": "app/login/page.js",
+  "/writer/profile/page": "app/writer/profile/page.js"
+}

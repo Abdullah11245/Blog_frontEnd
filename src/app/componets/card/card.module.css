@@ -1,0 +1,13 @@
+
+  .date {
+    color: gray;
+  }
+  .detail{
+    display: flex;
+    gap: 12px;
+  }
+  .category {
+    color: crimson;
+    font-weight: 500;
+  }
+  

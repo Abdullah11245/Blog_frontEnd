@@ -1,0 +1,67 @@
+/* Keyframe animation for expanding the active card */
+@keyframes expandCard {
+    0% {
+      transform: scale(1); /* Start at normal size */
+    }
+    100% {
+      transform: scale(1.25); /* End at 1.25x size */
+    }
+  }
+  
+  /* Keyframe animation for shrinking the non-active card */
+  @keyframes shrinkCard {
+    0% {
+      transform: scale(1.25); /* Start at 1.25x size */
+    }
+    100% {
+      transform: scale(1); /* End at normal size */
+    }
+  }
+  
+  /* The active card gets the expandCard animation */
+  .active-card {
+    animation: expandCard 0.7s ease-out forwards; /* Slightly faster animation (0.7s) */
+    transform: scale(1.25); /* Ensure active card has expanded size */
+    opacity: 1; /* Fully opaque */
+    z-index: 10; /* Ensure active card is on top */
+    margin: 0 8px; /* Reduced space on the left and right of the active card */
+  }
+  
+  /* The non-active card gets the shrinkCard animation */
+  .inactive-card {
+    animation: shrinkCard 0.7s ease-out forwards; /* Slightly faster animation (0.7s) */
+    transform: scale(1); /* Ensure non-active card is at normal size */
+    opacity: 0.8; /* Dim non-active cards slightly */
+    z-index: 5; /* Non-active cards are beneath the active one */
+    margin: 0 8px; /* Reduced space on the left and right of the inactive cards */
+  }
+  
+  /* Additional scale effect on non-active cards */
+  .inactive-card-scale {
+    transform: scale(0.9); /* Shrink non-active cards to 90% size */
+    opacity: 0.8; /* Dim non-active cards slightly */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for scale and opacity */
+  }
+  
+  /* Styling for cursor during drag */
+  .grab {
+    cursor: grab;
+  }
+  
+  .grabbing {
+    cursor: grabbing;
+  }
+  
+  /* Slider container with a gap between cards */
+  .slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Reduced space between the cards */
+  }
+  
+  /* Optional: styling for card divs inside the slider to ensure they shrink correctly */
+  .card {
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for all cards */
+  }
+  
