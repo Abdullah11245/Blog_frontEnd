@@ -1,7 +1,6 @@
 'use client'
 import { Sidebar } from "../Sidebar"
 import EditorForm from "./editorForm"
-import RichTextEditor from "./editor"
 import axios from "axios"
 import { useAppContext } from '@/app/Context';
 import Banner from "./banner"

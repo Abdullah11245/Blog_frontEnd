@@ -3,7 +3,7 @@ import axios from "axios";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import the Quill styles
 
-const FormComponent = () => {
+const EditorForm = () => {
   const [Choose, setChoose] = useState(false);
   const [Category, setCategory] = useState("Category");
   const [SubCategory, setSubCategory] = useState("Sub-category");
@@ -414,4 +414,4 @@ const FormComponent = () => {
   );
 };
 
-export default FormComponent;
+export default EditorForm;
