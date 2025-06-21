@@ -2,7 +2,6 @@ import { Blog } from "./profile/Blogs"
 import { Footer } from "./profile/Footer"
 import { Sidebar } from "./Sidebar"
 import {RichTextEditor} from "./editor/editor"
-import { EditorForm } from "./editor/editorForm"
 import BackgroundAnimation from "./backgroundAnimation"
 
 export default () =>{
