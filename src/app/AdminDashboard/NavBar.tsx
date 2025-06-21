@@ -2,7 +2,7 @@ export const Navbar = () =>{
     return (<>
 
 <div className="w-full mx-auto mb-10 ">
-  <nav className="  px-6 py-6   flex-col justify-end mx-auto fixed top-0 left-0 bg-white z-0 w-full ">
+  <nav className="  px-6 py-6   flex-col justify-end mx-auto fixed top-0 left-0 bg-white z-10 w-full ">
     <div className="container mx-auto flex flex-wrap items-center justify-between">
     <a href="#" className="flex items-center">
         <svg className="h-10 mr-3" width="51" height="70" viewBox="0 0 51 70" fill="none" xmlns="http://www.w3.org/2000/svg">

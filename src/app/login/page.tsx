@@ -2,16 +2,21 @@
 import Link from "next/link";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import axios from 'axios';
-
+import { useRouter } from 'next/navigation';
+import toast, { Toaster } from 'react-hot-toast';
+import { useState } from "react";
+import Loader from "../componets/loader/loader";
 type FormValues = {
   email: string;
   password: string;
   
 };
 export default () =>{
+  const router = useRouter();
   const { register, handleSubmit, watch, formState: { errors } } = useForm<FormValues>();
+  const [loading, setLoading] = useState(false);
   const saveUser = async (registration_data: FormValues) => {
-    console.log(registration_data)
+    setLoading(true)
     try {
       const formData = new FormData();
       formData.append('email', registration_data.email);
@@ -21,13 +26,26 @@ export default () =>{
       const response = await axios.post('http://localhost:5000/user/login', {email:registration_data.email,password:registration_data.password}, {
         withCredentials: true,
       });
-     
+     if(response.data.message='Login Successfully'){
+      console.log(response.data)
+      setLoading(false)
+      toast.success('Login Successfully');
+      localStorage.setItem('user', JSON.stringify(response.data.user));
       
-        console.log(response.data);
+  router.push('/');
+
+
+     }
+     else if(response.data.message='Invalid Email or password'){
+      setLoading(false)
+      toast.error('Invalid Credentials ')
+     }
+    
       
 
     } catch (error) {
-      console.log(error);
+      setLoading(false)
+      toast.error("Internal Server Error")
     }
   };
 
@@ -35,12 +53,18 @@ export default () =>{
     saveUser(data);
     console.log(data)
   };
+if(loading) return  <div className="flex items-center justify-center h-screen bg-white">
+
+<Loader/>
+</div>
+
 
     return (<>
-
 <div className='' style={{backgroundImage:'url(signupbg2.jpg)',backgroundPosition: 'center',backgroundRepeat:'no-repeat',backgroundSize: 'cover'}}>
 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 ">
   <div className="mx-auto max-w-lg bg-white pt-4 rounded-lg opacity-95">
+          <Toaster position="top-right" reverseOrder={false} />
+
     <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Get started today</h1>
 
     <p className="mx-auto mt-4 max-w-md text-center text-gray-500">

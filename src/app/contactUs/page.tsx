@@ -1,7 +1,6 @@
 export default () =>{
     return (<>
        <div className='py-12 min-h-screen flex flex-col justify-center gap-y-16' style={{backgroundImage:'url(8116.jpg)',backgroundPosition: 'center',backgroundRepeat:'no-repeat',backgroundSize: 'cover'}}>
-       <p className="text-white text-5xl text-center font-semibold mt-6">Contact us</p>
        <div className="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-4xl bg-white  rounded-md text-[#333] opacity-95">
                 <div>
                     <h1 className="text-3xl font-bold">Let's Talk</h1>
@@ -69,12 +68,7 @@ export default () =>{
         </label>
         <input type="text" placeholder="abc@gmail.com" className="input input-bordered input-md w-full py-3 px-2 border rounded-lg" />
                   </div>
-                  <div className='mb-3'>
-          <label  className="mb-1 block text-xs px-2 font-semibold text-[#07074D]">
-       Enter your Subject
-        </label>
-        <input type="text" placeholder="Subject of Email" className="input input-bordered input-md w-full py-3 px-2 border rounded-lg" />
-                  </div>
+                 
                     <textarea placeholder='Message' 
                         className="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"></textarea>
                     <button type='button'

@@ -1,7 +1,7 @@
 export const Footer = () =>{
     return (<>
-<footer className=" py-4 " >
-  <div className="mx-auto  pb-6 pt-4 max-w-screen-xl">
+<footer className=" py-4  bg-gradient-to-t from-gray-200 to-white"  >
+  <div className="mx-auto  pb-6 pt-4 max-w-screen-xl ">
     
     <div
       className="mt-4 grid grid-cols-1 gap-8  pt-4 md:grid-cols-4 lg:grid-cols-6"

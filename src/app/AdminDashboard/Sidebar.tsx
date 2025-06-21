@@ -1,6 +1,6 @@
 export const Sidebar = () =>{
     return (<>
-    <div className="fixed flex flex-col top-12 left-0 w-14 hover:w-64 md:w-64  bg-white dark:bg-gray-900 h-full  transition-all duration-300  z-80 sidebar ">
+    <div className="fixed flex flex-col top-64 left-0 w-14 hover:w-64 md:w-64  bg-white dark:bg-gray-900 h-full  transition-all duration-300  z-40 sidebar ">
  
  <div className="container flex flex-col mx-auto bg-white">
      <aside className="group/sidebar flex flex-col shrink-0 lg:w-[275px] w-[250px] transition-all duration-300 ease-in-out m-0 fixed z-40 inset-y-0 left-0 bg-white border-r border-r-dashed border-r-neutral-200 sidenav fixed-start loopple-fixed-start" id="sidenav-main"><div className="flex shrink-0 px-8 items-center justify-between h-[96px]">
