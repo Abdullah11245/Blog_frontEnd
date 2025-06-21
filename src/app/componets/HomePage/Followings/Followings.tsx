@@ -1,9 +1,8 @@
 'use client'
+
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-export const Followings = () => {
-  
 interface User {
   _id: string;
   name: string;
@@ -11,76 +10,60 @@ interface User {
   userImage: string;
 }
 
+export const Followings = () => {
   const [users, setUsers] = useState<User[]>([])
-    const userId = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '{}')._id : null
-    //  const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '{}'):null
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/user/users');
-      const allUsers = response.data;
+  const [userId, setUserId] = useState<string | null>(null)
 
-      // Get logged-in user from localStorage
-      const storedUser = localStorage.getItem('user');
-      const user = storedUser ? JSON.parse(storedUser) : null;
+  // ✅ Safely read user from localStorage on client
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user')
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null
 
-      if (!user || !user.following || !Array.isArray(user.following)) {
-        console.warn('User or followings not available');
-        return;
-      }
-
-      // Filter users who are in the "following" list
-      const filteredUsers = allUsers.filter((u: any) =>
-        user.following.includes(u._id)
-      );
-
-      console.log('Followed users:', filteredUsers);
-      setUsers(filteredUsers);
-    } catch (error) {
-      console.error('Error fetching data:', error);
+    if (parsedUser?._id) {
+      setUserId(parsedUser._id)
     }
-  };
 
-  fetchData();
-}, []);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/user/users')
+        const allUsers = response.data
 
-    const team = [
-        {
-            avatar: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Martiana",
-            title: "Product designer",
-            linkedin: "javascript:void(0)",
-            twitter: "javascript:void(0)",
-        },
-        {
-            avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
-            name: "Micheal",
-            title: "Software engineer",
-            linkedin: "javascript:void(0)",
-            twitter: "javascript:void(0)",
-        },
-           ]
+        if (!parsedUser || !Array.isArray(parsedUser.following)) {
+          console.warn('User or followings not available')
+          return
+        }
 
-    return (
-      
-                
-                <div className="mt-8">
-                    <p className="text-lg font-semibold py-2">Your Followings</p>
-                    <ul className="grid gap-8 sm:grid-cols-2 py-2">
-                        {
-                            users?.map((item:any, idx:any) => (
-                                <li key={idx} className="flex flex-col gap-2 items-center">
-                                    <div className=" w-16 h-16">
-                                        <img
-                                            src={item.userImage}
-                                            className="w-full h-full rounded-full"
-                                            alt={item.name}
-                                        />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-gray-700 font-semibold text-sm">{item.name}</h4>
-                                        <p className="text-gray-700 text-xs">{item.title}</p>
-                                        <div className="mt-1 flex gap-4 text-gray-400 items-center">
+        const filteredUsers = allUsers.filter((u: any) =>
+          parsedUser.following.includes(u._id)
+        )
+
+        console.log('Followed users:', filteredUsers)
+        setUsers(filteredUsers)
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  return (
+    <div className="mt-8">
+      <p className="text-lg font-semibold py-2">Your Followings</p>
+      <ul className="grid gap-8 sm:grid-cols-2 py-2">
+        {users.map((item, idx) => (
+          <li key={idx} className="flex flex-col gap-2 items-center">
+            <div className="w-16 h-16">
+              <img
+                src={item.userImage}
+                className="w-full h-full rounded-full"
+                alt={item.name}
+              />
+            </div>
+            <div>
+              <h4 className="text-gray-700 font-semibold text-sm">{item.name}</h4>
+              <p className="text-gray-700 text-xs">{item.title}</p>
+               <div className="mt-1 flex gap-4 text-gray-400 items-center">
                                             <a href={''}>
                                                 <svg className="w-4 h-4 duration-150 hover:text-gray-500" fill="currentColor" viewBox="0 0 48 48"><g clip-path="url(#clip0_17_80)"><path fill="currentColor" d="M15.1 43.5c18.11 0 28.017-15.006 28.017-28.016 0-.422-.01-.853-.029-1.275A19.998 19.998 0 0048 9.11c-1.795.798-3.7 1.32-5.652 1.546a9.9 9.9 0 004.33-5.445 19.794 19.794 0 01-6.251 2.39 9.86 9.86 0 00-16.788 8.979A27.97 27.97 0 013.346 6.299 9.859 9.859 0 006.393 19.44a9.86 9.86 0 01-4.462-1.228v.122a9.844 9.844 0 007.901 9.656 9.788 9.788 0 01-4.442.169 9.867 9.867 0 009.195 6.843A19.75 19.75 0 010 39.078 27.937 27.937 0 0015.1 43.5z" /></g><defs><clipPath id="clip0_17_80"><path fill="currentColor" d="M0 0h48v48H0z" /></clipPath></defs></svg>
                                             </a>
@@ -95,62 +78,38 @@ useEffect(() => {
             </svg>
                                      </a>
                                         </div>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                   
-                    <div className="flex justify-between items-center mt-3">
-                    <div className="text-xs flex items-center gap-x-1">
-            <span className="text-white font-semibold text-xs w-5 h-5   bg-gray-600 rounded-full items-center justify-center flex"> 2</span> <span className="text-gray-700 font-semibold">Followings</span>  left ...
-			</div>
-		   <div className=" flex items-center gap-x-2 ">
-      <div
-    className="border border-gray-300 rounded-full text-gray-500 hover:bg-gray-200 hover:border-gray-200 bg-white"
-  >
-    <button  className="w-8 h-8 flex items-center justify-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M15 19l-7-7 7-7"
-        />
-      </svg>
-    </button>
-      </div>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-      <div
-    className="border border-gray-300 rounded-full text-gray-500 hover:bg-gray-200 hover:border-gray-200 bg-white"
-  >
-    <button className="w-8 h-8 flex items-center justify-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 5l7 7-7 7"
-        />
-      </svg>
-    </button>
-  </div>
+      {/* Pagination Controls */}
+      <div className="flex justify-between items-center mt-3">
+        <div className="text-xs flex items-center gap-x-1">
+          <span className="text-white font-semibold text-xs w-5 h-5 bg-gray-600 rounded-full flex items-center justify-center"> 
+            {users.length}
+          </span> 
+          <span className="text-gray-700 font-semibold">Followings</span> left ...
+        </div>
+        <div className="flex items-center gap-x-2">
+          <div className="border border-gray-300 rounded-full text-gray-500 hover:bg-gray-200 bg-white">
+            <button className="w-8 h-8 flex items-center justify-center">
+              {/* Left arrow */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
           </div>
-		   </div>
-      
-                </div>
-          
-    )
+          <div className="border border-gray-300 rounded-full text-gray-500 hover:bg-gray-200 bg-white">
+            <button className="w-8 h-8 flex items-center justify-center">
+              {/* Right arrow */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
