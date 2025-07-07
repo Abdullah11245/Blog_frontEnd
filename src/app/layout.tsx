@@ -18,7 +18,7 @@ export default function RootLayout({
 
   const pathname = usePathname();
  
-  const disablePathname = ["/AdminDashboard", "/writer/editor","/writer/profile" ,"/writer"]
+  const disablePathname = ["/AdminDashboard", "/writer/editor","/writer/profile" ,"/writer/Likes","/writer/BookMarks","/writer/Followers","/writer/MostViewed&Pormotions","/writer/Blogs","/AdminDashboard/Categories","/AdminDashboard/Blogs","/AdminDashboard/Likes","/AdminDashboard/SubCategories","/AdminDashboard/Users","/AdminDashboard/BookMarks"]
   const homePath =['/']
   return (
     <html lang="en">

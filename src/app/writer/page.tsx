@@ -1,7 +1,5 @@
-import { Blog } from "./profile/Blogs"
-import { Footer } from "./profile/Footer"
+
 import { Sidebar } from "./Sidebar"
-import {RichTextEditor} from "./editor/editor"
 import BackgroundAnimation from "./backgroundAnimation"
 
 export default () =>{

@@ -1,6 +1,6 @@
 import { PieChart } from "./Charts/PieCharts"
 import { MaintainProgress } from "./MaintainProgress"
-import { Navbar } from "./NavBar"
+import { Navbar } from "./NavBarAdmin"
 import { Sidebar } from "./Sidebar"
 import Stats from "./Stats"
 import { Viewed } from "./Viewed"
@@ -54,12 +54,7 @@ export default () =>{
            
           </div>
         </div>
-        <div className="mt-4 ">
-          <div className="w-full overflow-hidden shadow-xs">
-            <WritersTable/>
-           
-          </div>
-        </div>
+       
       
       
         <div className="mt-8 mx-4 grid grid-cols-3 gap-x-8">

@@ -1,7 +1,7 @@
 import { Pagination } from "./Pagination/Pagination";
 export const WritersTable = () =>{
     return (<>
-<div className=" w-full border px-10  rounded-lg">
+<div className=" w-full  px-10  rounded-lg">
             <div className=" py-2 md:py-3 ">
                 <div className="flex items-center justify-between ">
                     <p  className="focus:outline-none text-base sm:text-lg md:text-xl max-w-md font-bold leading-normal text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>

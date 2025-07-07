@@ -1,100 +1,268 @@
+import Link from "next/link"
 export const Sidebar = () =>{
+  const data=[
+    {
+      name: "Categories",
+      icon:<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" 
+      strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier">
+       <path d="M13 15C13 14.0572 13 13.5858 13.2929 13.2929C13.5858 13 14.0572 13 15
+       13H17C17.9428 13 18.4142 13 18.7071 13.2929C19 13.5858 19 14.0572 19 15V17C19 17.9428 19 18.4142 18.7071
+       18.7071C18.4142 19 17.9428 19 17 19H15C14.0572 19 13.5858 19 13.2929 18.7071C13 18.4142 13 17.9428 13 17V15Z"
+       stroke="#464455" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M13 7C13 6.05719 13 5.58579 13.2929
+       5.29289C13.5858 5 14.0572 5 15 5H17C17.9428 5 18.4142 5 18.7071 5.29289C19 5.58579 19 6.05719 19 7V9C19 9.94281 19 
+      10.4142 18.7071 10.7071C18.4142 11 17.9428 11 17 11H15C14.0572 11 13.5858 11 13.2929 10.7071C13 10.4142 13 9.94281 13 9V7Z" 
+    stroke="#464455" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M5 15C5 14.0572 5 13.5858 5.29289 13.2929C5.58579
+     13 6.05719 13 7 13H9C9.94281 13 10.4142 13 10.7071 13.2929C11 13.5858 11 14.0572 11 15V17C11 17.9428 11 18.4142 10.7071
+     18.7071C10.4142 19 9.94281 19 9 19H7C6.05719 19 5.58579 19 5.29289 18.7071C5 18.4142 5 17.9428 5 17V15Z" stroke="#464455" strokeLinecap="round"
+      strokeLinejoin="round"></path> <path d="M5 7C5 6.05719 5 5.58579 5.29289 5.29289C5.58579 5 6.05719 5 7 5H9C9.94281 5 10.4142 5
+       10.7071 5.29289C11 5.58579 11 6.05719 11 7V9C11 9.94281 11 10.4142 10.7071 10.7071C10.4142 11 9.94281 11 9 11H7C6.05719 11 5.58579 11 5.29289 
+      10.7071C5 10.4142 5 9.94281 5 9V7Z" stroke="#464455" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg> ,
+      link: "/AdminDashboard/Categories"
+    },
+   
+    {
+      name: "Book Marks",
+      icon:<svg  className='w-6 h-6 bi bi-bookmarks' viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier"> <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"></path>
+     <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"></path> </g></svg> ,
+
+      link: "/AdminDashboard/BookMarks"
+    },
+     {
+      name: "Blogs",
+      icon:<svg className='w-6 h-6' fill="#000000" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" 
+       viewBox="0 0 477.666 477.666" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+       <g id="SVGRepo_iconCarrier"> <g> <path d="M470.25,7.41c-4.913-4.913-11.965-7.406-20.976-7.406c-59.281,0-245.431,114.868-317.575,187.019 c-17.694,17.687-32.213,
+       35.381-43.175,52.586c-2.182,3.433-2.723,7.664-1.464,11.531c1.261,3.867,4.187,6.971,7.974,8.461 l11.823,4.657l-31.185,12.275c-4.08,1.595-7.131,5.064-8.214,9.304c-6.083,
+       23.813-3.849,46.439,6.067,66.918l20.764-20.762 c-3.246-10.279-3.913-21.154-1.864-32.772l56.631-22.289c0.258-0.096,0.452-0.292,0.692-0.398l6.492-6.494 c0.861-1.791,1.455-3.716,
+       1.455-5.782c0-5.596-3.424-10.626-8.639-12.675l-28.062-11.042c8.39-11.236,18.42-22.705,29.969-34.253 c70.271-70.272,251.48-179.037,298.31-179.037c0.381,0,0.728,0.009,1.03,0.027c0.194,
+       4.843-1.233,20.044-18.377,57.757 l-50.884,38.892c-3.371,2.572-5.348,6.572-5.348,10.821c0,4.24,1.976,8.248,5.348,10.821l13.676,10.457 c-39.397,67.895-88.152,135.479-123.345,170.672c-48.266,
+       48.266-90.431,67.575-125.599,56.551l-20.842,20.842 c12.701,6.156,26.155,9.553,40.436,9.553c38.209,0,80.365-22.776,125.269-67.682c39.141-39.141,91.621-112.463,133.697-186.797 c3.344-5.923,
+       1.818-13.411-3.584-17.534l-9.002-6.882l39.424-30.129c1.757-1.339,3.166-3.095,4.089-5.11 C485.098,34.958,479.581,16.723,470.25,7.41z"></path> <path d="M237.023,240.629C177.528,278.164,45.347,
+       396.747,0,477.662C76.248,434.921,196.704,304.533,237.023,240.629z"></path> </g> </g></svg>
+,
+      link: "/AdminDashboard/Blogs"
+    },
+     {
+      name: "Sub Categories",
+      icon:<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" 
+      strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier">
+       <path d="M13 15C13 14.0572 13 13.5858 13.2929 13.2929C13.5858 13 14.0572 13 15
+       13H17C17.9428 13 18.4142 13 18.7071 13.2929C19 13.5858 19 14.0572 19 15V17C19 17.9428 19 18.4142 18.7071
+       18.7071C18.4142 19 17.9428 19 17 19H15C14.0572 19 13.5858 19 13.2929 18.7071C13 18.4142 13 17.9428 13 17V15Z"
+       stroke="#464455" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M13 7C13 6.05719 13 5.58579 13.2929
+       5.29289C13.5858 5 14.0572 5 15 5H17C17.9428 5 18.4142 5 18.7071 5.29289C19 5.58579 19 6.05719 19 7V9C19 9.94281 19 
+      10.4142 18.7071 10.7071C18.4142 11 17.9428 11 17 11H15C14.0572 11 13.5858 11 13.2929 10.7071C13 10.4142 13 9.94281 13 9V7Z" 
+    stroke="#464455" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M5 15C5 14.0572 5 13.5858 5.29289 13.2929C5.58579
+     13 6.05719 13 7 13H9C9.94281 13 10.4142 13 10.7071 13.2929C11 13.5858 11 14.0572 11 15V17C11 17.9428 11 18.4142 10.7071
+     18.7071C10.4142 19 9.94281 19 9 19H7C6.05719 19 5.58579 19 5.29289 18.7071C5 18.4142 5 17.9428 5 17V15Z" stroke="#464455" strokeLinecap="round"
+      strokeLinejoin="round"></path> <path d="M5 7C5 6.05719 5 5.58579 5.29289 5.29289C5.58579 5 6.05719 5 7 5H9C9.94281 5 10.4142 5
+       10.7071 5.29289C11 5.58579 11 6.05719 11 7V9C11 9.94281 11 10.4142 10.7071 10.7071C10.4142 11 9.94281 11 9 11H7C6.05719 11 5.58579 11 5.29289 
+      10.7071C5 10.4142 5 9.94281 5 9V7Z" stroke="#464455" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg> ,
+      link: "/AdminDashboard/SubCategories"
+    },
+    {
+      name: "Likes",
+      icon: <svg className='w-6 h-6' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier"> <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#1C274C"></path> 
+      </g></svg> ,
+      link: "/AdminDashboard/Likes"
+    },
+    {
+      name: "Users",
+      icon: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" 
+      strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier">
+      <circle opacity="0.4" cx="15" cy="6" r="3" fill="#1C274C"></circle> 
+      <ellipse opacity="0.4" cx="16" cy="17" rx="5" ry="3" fill="#1C274C"></ellipse>
+     <circle cx="9.00098" cy="6" r="4" fill="#1C274C"></circle> <ellipse 
+     cx="9.00098" cy="17.001" rx="7" ry="4" fill="#1C274C"></ellipse> </g></svg> ,
+      link: "/AdminDashboard/Users"
+    }
+  ]
     return (<>
     <div className="fixed flex flex-col top-64 left-0 w-14 hover:w-64 md:w-64  bg-white dark:bg-gray-900 h-full  transition-all duration-300  z-40 sidebar ">
  
  <div className="container flex flex-col mx-auto bg-white">
-     <aside className="group/sidebar flex flex-col shrink-0 lg:w-[275px] w-[250px] transition-all duration-300 ease-in-out m-0 fixed z-40 inset-y-0 left-0 bg-white border-r border-r-dashed border-r-neutral-200 sidenav fixed-start loopple-fixed-start" id="sidenav-main"><div className="flex shrink-0 px-8 items-center justify-between h-[96px]">
-     <a className="transition-colors duration-200 ease-in-out" href="https://www.loopple.com">
-     <svg className="h-10 mr-3" width="51" height="70" viewBox="0 0 51 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <g clipPath="url(#clip0)">
-     <path d="M1 53H27.9022C40.6587 53 51 42.7025 51 30H24.0978C11.3412 30 1 40.2975 1 53Z" fill="#76A9FA"></path>
-     <path d="M-0.876544 32.1644L-0.876544 66.411C11.9849 66.411 22.4111 55.9847 22.4111 43.1233L22.4111 8.87674C10.1196 8.98051 0.518714 19.5571 -0.876544 32.1644Z" fill="#A4CAFE"></path>
-     <path d="M50 5H23.0978C10.3413 5 0 15.2975 0 28H26.9022C39.6588 28 50 17.7025 50 5Z" fill="#1C64F2"></path>
-   </g>
-   <defs>
-     <clipPath id="clip0">
-       <rect width="51" height="70" fill="white"></rect>
-     </clipPath>
-   </defs>
- </svg>            </a>
- </div>
+     <aside className="group/sidebar flex flex-col shrink-0 lg:w-[275px] w-[250px] transition-all duration-300 ease-in-out m-0 fixed z-40 inset-y-0 left-0 bg-white  sidenav fixed-start loopple-fixed-start" id="sidenav-main">
+    
 
- <div className="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
 
- <div className="flex items-center justify-between px-8 py-5">
+
+ <div className="flex items-center justify-between px-8 py-2  mt-4">
      <div className="flex items-center mr-5">
      <div className="mr-5">
          <div className="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
          <img className="w-12 h-12 shrink-0 inline-block rounded-full" src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/riva-dashboard-tailwind/img/avatars/avatar1.jpg" alt="avatar image" />
          </div>
      </div>
-     <div className="mr-2 ">
-         <a href="/writer/profile" className="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.00rem]  dark:text-neutral-400/90 text-secondary-inverse">Robert Jason</a>
-         <span className="text-gray-600 dark:text-stone-500 font-medium block text-[0.75rem]">SEO Manager</span>
+     <div className="mr-1 ">
+         <Link href="/writer/profile" className=" transition-colors duration-200 ease-in-out text-[0.9rem]">Robert Jason</Link>
+         <span className=" font-medium block text-[0.7rem]">Admin</span>
+          
      </div>
+    
      </div>
     
  </div>
 
- <div className="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
+ 
 
- <div className="relative  my-5 ">
-   
+
+
+
+
+ <div className="relative  mt-8 px-4 ">
+   <p className="text-sm px-2 text-gray-500">
+  Dashboard Pages
+  </p>
      <ul className="flex flex-col py-4 space-y-1">
-     <li className='px-2'>
-   <a href="#" className="relative bg-gray-200  flex flex-row items-center h-11 focus:outline-none  text-gray-600 hover:text-gray-800 border-l-4 border-transparent">
-     <span className="inline-flex justify-center items-center ml-4">
-     <svg  className='w-6 h-6' viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.5 10.32C8.433 10.32 10 8.753 10 6.82001C10 4.88701 8.433 3.32001 6.5 3.32001C4.567 3.32001 3 4.88701 3 6.82001C3 8.753 4.567 10.32 6.5 10.32Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M17.5 10.32C19.433 10.32 21 8.753 21 6.82001C21 4.88701 19.433 3.32001 17.5 3.32001C15.567 3.32001 14 4.88701 14 6.82001C14 8.753 15.567 10.32 17.5 10.32Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6.5 21.32C8.433 21.32 10 19.753 10 17.82C10 15.887 8.433 14.32 6.5 14.32C4.567 14.32 3 15.887 3 17.82C3 19.753 4.567 21.32 6.5 21.32Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M17.5 21.32C19.433 21.32 21 19.753 21 17.82C21 15.887 19.433 14.32 17.5 14.32C15.567 14.32 14 15.887 14 17.82C14 19.753 15.567 21.32 17.5 21.32Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>            </span>
-     <span className="ml-2 text-sm text-black tracking-wide truncate">Cerrar Sesión</span>
-   </a>
- </li>
- <li>
-   <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none  text-gray-600 hover:text-gray-800 border-l-4 border-transparent">
-     <span className="inline-flex justify-center items-center ml-4">
-     <svg  className='w-6 h-6' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.5" d="M6.28571 19C3.91878 19 2 17.1038 2 14.7647C2 12.4256 3.91878 10.5294 6.28571 10.5294C6.56983 10.5294 6.8475 10.5567 7.11616 10.6089M14.381 8.02721C14.9767 7.81911 15.6178 7.70588 16.2857 7.70588C16.9404 7.70588 17.5693 7.81468 18.1551 8.01498M7.11616 10.6089C6.88706 9.9978 6.7619 9.33687 6.7619 8.64706C6.7619 5.52827 9.32028 3 12.4762 3C15.4159 3 17.8371 5.19371 18.1551 8.01498M7.11616 10.6089C7.68059 10.7184 8.20528 10.9374 8.66667 11.2426M18.1551 8.01498C20.393 8.78024 22 10.8811 22 13.3529C22 16.0599 20.0726 18.3221 17.5 18.8722" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12 16V22M12 16L14 18M12 16L10 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>            </span>
-     <span className="ml-2 text-sm tracking-wide truncate">Inicio</span>
-   </a>
- </li>
- <li>
-   <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none  text-gray-600 hover:text-gray-800 border-l-4 border-transparent">
-     <span className="inline-flex justify-center items-center ml-4">
-     <svg className='w-6 h-6' fill="#000000" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 477.666 477.666" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M470.25,7.41c-4.913-4.913-11.965-7.406-20.976-7.406c-59.281,0-245.431,114.868-317.575,187.019 c-17.694,17.687-32.213,35.381-43.175,52.586c-2.182,3.433-2.723,7.664-1.464,11.531c1.261,3.867,4.187,6.971,7.974,8.461 l11.823,4.657l-31.185,12.275c-4.08,1.595-7.131,5.064-8.214,9.304c-6.083,23.813-3.849,46.439,6.067,66.918l20.764-20.762 c-3.246-10.279-3.913-21.154-1.864-32.772l56.631-22.289c0.258-0.096,0.452-0.292,0.692-0.398l6.492-6.494 c0.861-1.791,1.455-3.716,1.455-5.782c0-5.596-3.424-10.626-8.639-12.675l-28.062-11.042c8.39-11.236,18.42-22.705,29.969-34.253 c70.271-70.272,251.48-179.037,298.31-179.037c0.381,0,0.728,0.009,1.03,0.027c0.194,4.843-1.233,20.044-18.377,57.757 l-50.884,38.892c-3.371,2.572-5.348,6.572-5.348,10.821c0,4.24,1.976,8.248,5.348,10.821l13.676,10.457 c-39.397,67.895-88.152,135.479-123.345,170.672c-48.266,48.266-90.431,67.575-125.599,56.551l-20.842,20.842 c12.701,6.156,26.155,9.553,40.436,9.553c38.209,0,80.365-22.776,125.269-67.682c39.141-39.141,91.621-112.463,133.697-186.797 c3.344-5.923,1.818-13.411-3.584-17.534l-9.002-6.882l39.424-30.129c1.757-1.339,3.166-3.095,4.089-5.11 C485.098,34.958,479.581,16.723,470.25,7.41z"></path> <path d="M237.023,240.629C177.528,278.164,45.347,396.747,0,477.662C76.248,434.921,196.704,304.533,237.023,240.629z"></path> </g> </g></svg>
-     </span>
-     <span className="ml-2 text-sm tracking-wide truncate">Autorizaciones</span>
-   </a>
- </li>
- <li>
-   <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none  text-gray-600 hover:text-gray-800 border-l-4 border-transparent">
-     <span className="inline-flex justify-center items-center ml-4">
-     <svg  className='w-6 h-6 bi bi-bookmarks' viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"></path> <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"></path> </g></svg>            </span>
-     <span className="ml-2 text-sm tracking-wide truncate">Usuarios</span>
-   </a>
- </li>
- <li>
-   <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none  text-gray-600 hover:text-gray-800 border-l-4 border-transparent">
-     <span className="inline-flex justify-center items-center ml-4">
-     <svg className='w-6 h-6' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#1C274C"></path> </g></svg>            </span>
-     <span className="ml-2 text-sm tracking-wide truncate">Comercios</span>
-   </a>
- </li>
+      {data.map((item, index) => (
+        <li key={index} className=' py-2'>
+          <Link href={item.link} className="relative  flex-row items-center h-11 focus:outline-none text-gray-600 hover:text-gray-800 border-l-4 border-transparent">
+            <span className="inline-flex justify-center items-center ml-4">
+              {item.icon}
+              <span className="ml-2 text-base tracking-wide truncate">{item.name}</span>
+            </span>
+  </Link>
+        </li>
+      ))}
+
 
 </ul>
     
 
-   
+   <div className="mt-4">
+  <p className="text-sm px-2 text-gray-500">
+   Our Socials
+  </p>
+  <p className="text-xs px-2 text-gray-400">
+Lorem ipsum dolor sit amet, adipiscing elit.
+  </p>
+<div className="bg-white w-full h-auto py-2 flex items-center  gap-2 flex-wrap px-2">
+      <Link href="javascript:;"
+      className="p-1 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 71 72"
+      fill="none">
+      <path
+        d="M46.4233 38.6403L47.7279 30.3588H39.6917V24.9759C39.6917 22.7114 40.8137 20.4987 44.4013 20.4987H48.1063V13.4465C45.9486 13.1028 43.7685 12.9168 41.5834 12.8901C34.9692 12.8901 30.651 16.8626 30.651 24.0442V30.3588H23.3193V38.6403H30.651V58.671H39.6917V38.6403H46.4233Z"
+        fill="#111827" />
+      </svg>
+      </Link>
+      <Link href="javascript:;"
+      className="p-1 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 71 72"
+      fill="none">
+      <path
+        d="M27.3762 35.7808C27.3762 31.1786 31.1083 27.4468 35.7132 27.4468C40.3182 27.4468 44.0522 31.1786 44.0522 35.7808C44.0522 40.383 40.3182 44.1148 35.7132 44.1148C31.1083 44.1148 27.3762 40.383 27.3762 35.7808ZM22.8683 35.7808C22.8683 42.8708 28.619 48.618 35.7132 48.618C42.8075 48.618 48.5581 42.8708 48.5581 35.7808C48.5581 28.6908 42.8075 22.9436 35.7132 22.9436C28.619 22.9436 22.8683 28.6908 22.8683 35.7808ZM46.0648 22.4346C46.0646 23.0279 46.2404 23.608 46.5701 24.1015C46.8997 24.595 47.3684 24.9797 47.9168 25.2069C48.4652 25.4342 49.0688 25.4939 49.6511 25.3784C50.2334 25.2628 50.7684 24.9773 51.1884 24.5579C51.6084 24.1385 51.8945 23.6041 52.0105 23.0222C52.1266 22.4403 52.0674 21.8371 51.8404 21.2888C51.6134 20.7406 51.2289 20.2719 50.7354 19.942C50.2418 19.6122 49.6615 19.436 49.0679 19.4358H49.0667C48.2708 19.4361 47.5077 19.7522 46.9449 20.3144C46.3821 20.8767 46.0655 21.6392 46.0648 22.4346ZM25.6072 56.1302C23.1683 56.0192 21.8427 55.6132 20.9618 55.2702C19.7939 54.8158 18.9606 54.2746 18.0845 53.4002C17.2083 52.5258 16.666 51.6938 16.2133 50.5266C15.8699 49.6466 15.4637 48.3214 15.3528 45.884C15.2316 43.2488 15.2073 42.4572 15.2073 35.781C15.2073 29.1048 15.2336 28.3154 15.3528 25.678C15.4639 23.2406 15.8731 21.918 16.2133 21.0354C16.668 19.8682 17.2095 19.0354 18.0845 18.1598C18.9594 17.2842 19.7919 16.7422 20.9618 16.2898C21.8423 15.9466 23.1683 15.5406 25.6072 15.4298C28.244 15.3086 29.036 15.2844 35.7132 15.2844C42.3904 15.2844 43.1833 15.3106 45.8223 15.4298C48.2612 15.5408 49.5846 15.9498 50.4677 16.2898C51.6356 16.7422 52.4689 17.2854 53.345 18.1598C54.2211 19.0342 54.7615 19.8682 55.2161 21.0354C55.5595 21.9154 55.9658 23.2406 56.0767 25.678C56.1979 28.3154 56.2221 29.1048 56.2221 35.781C56.2221 42.4572 56.1979 43.2466 56.0767 45.884C55.9656 48.3214 55.5573 49.6462 55.2161 50.5266C54.7615 51.6938 54.2199 52.5266 53.345 53.4002C52.4701 54.2738 51.6356 54.8158 50.4677 55.2702C49.5872 55.6134 48.2612 56.0194 45.8223 56.1302C43.1855 56.2514 42.3934 56.2756 35.7132 56.2756C29.033 56.2756 28.2432 56.2514 25.6072 56.1302ZM25.4001 10.9322C22.7371 11.0534 20.9174 11.4754 19.3282 12.0934C17.6824 12.7316 16.2892 13.5878 14.897 14.977C13.5047 16.3662 12.6502 17.7608 12.0116 19.4056C11.3933 20.9948 10.971 22.8124 10.8497 25.4738C10.7265 28.1394 10.6982 28.9916 10.6982 35.7808C10.6982 42.57 10.7265 43.4222 10.8497 46.0878C10.971 48.7494 11.3933 50.5668 12.0116 52.156C12.6502 53.7998 13.5049 55.196 14.897 56.5846C16.289 57.9732 17.6824 58.8282 19.3282 59.4682C20.9204 60.0862 22.7371 60.5082 25.4001 60.6294C28.0687 60.7506 28.92 60.7808 35.7132 60.7808C42.5065 60.7808 43.3592 60.7526 46.0264 60.6294C48.6896 60.5082 50.5081 60.0862 52.0983 59.4682C53.7431 58.8282 55.1373 57.9738 56.5295 56.5846C57.9218 55.1954 58.7745 53.7998 59.4149 52.156C60.0332 50.5668 60.4575 48.7492 60.5768 46.0878C60.698 43.4202 60.7262 42.57 60.7262 35.7808C60.7262 28.9916 60.698 28.1394 60.5768 25.4738C60.4555 22.8122 60.0332 20.9938 59.4149 19.4056C58.7745 17.7618 57.9196 16.3684 56.5295 14.977C55.1395 13.5856 53.7431 12.7316 52.1003 12.0934C50.5081 11.4754 48.6894 11.0514 46.0284 10.9322C43.3612 10.811 42.5085 10.7808 35.7152 10.7808C28.922 10.7808 28.0687 10.809 25.4001 10.9322Z"
+        fill="#111827" />
+      </svg></Link>
+      <Link href="javascript:;"
+      className="p-1 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72"
+      fill="none">
+      <path
+        d="M40.7568 32.1716L59.3704 11H54.9596L38.7974 29.383L25.8887 11H11L30.5205 38.7983L11 61H15.4111L32.4788 41.5869L46.1113 61H61L40.7557 32.1716H40.7568ZM34.7152 39.0433L32.7374 36.2752L17.0005 14.2492H23.7756L36.4755 32.0249L38.4533 34.7929L54.9617 57.8986H48.1865L34.7152 39.0443V39.0433Z"
+        fill="#111827" />
+      </svg></Link>
+      <Link href="javascript:;"
+      className="p-1 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72"
+      fill="none">
+      <path
+        d="M50.0783 22.6244C49.7746 22.4674 49.4789 22.2953 49.1924 22.1088C48.3592 21.5579 47.5952 20.9089 46.9171 20.1756C45.2202 18.2341 44.5864 16.2644 44.353 14.8853H44.3624C44.1674 13.7406 44.248 13 44.2602 13H36.5314V42.8856C36.5314 43.2869 36.5314 43.6834 36.5146 44.0753C36.5146 44.1241 36.5099 44.1691 36.5071 44.2216C36.5071 44.2431 36.5071 44.2656 36.5024 44.2881C36.5024 44.2938 36.5024 44.2994 36.5024 44.305C36.4209 45.3773 36.0772 46.4131 35.5014 47.3214C34.9257 48.2297 34.1355 48.9825 33.2005 49.5138C32.226 50.0681 31.1238 50.359 30.0027 50.3575C26.4017 50.3575 23.4833 47.4213 23.4833 43.795C23.4833 40.1688 26.4017 37.2325 30.0027 37.2325C30.6843 37.2319 31.3618 37.3391 32.0099 37.5503L32.0192 29.6809C30.0518 29.4268 28.053 29.5832 26.149 30.1402C24.245 30.6972 22.477 31.6427 20.9567 32.9172C19.6246 34.0746 18.5047 35.4557 17.6474 36.9981C17.3211 37.5606 16.0902 39.8209 15.9411 43.4894C15.8474 45.5716 16.4727 47.7288 16.7708 48.6203V48.6391C16.9583 49.1641 17.6849 50.9556 18.8689 52.4659C19.8237 53.6774 20.9518 54.7417 22.2167 55.6244V55.6056L22.2355 55.6244C25.9771 58.1669 30.1255 58 30.1255 58C30.8436 57.9709 33.2492 58 35.9811 56.7053C39.0111 55.27 40.7361 53.1316 40.7361 53.1316C41.8381 51.8538 42.7144 50.3977 43.3274 48.8256C44.0267 46.9872 44.2602 44.7822 44.2602 43.9009V28.0459C44.3539 28.1022 45.6027 28.9281 45.6027 28.9281C45.6027 28.9281 47.4017 30.0813 50.2086 30.8322C52.2224 31.3666 54.9355 31.4791 54.9355 31.4791V23.8066C53.9849 23.9097 52.0546 23.6097 50.0783 22.6244Z"
+        fill="#111827" />
+      </svg></Link>
+      <Link href="javascript:;"
+      className="p-1 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72"
+      fill="none">
+      <path
+        d="M24.7612 55.999V28.3354H15.5433V55.999H24.7621H24.7612ZM20.1542 24.5591C23.3679 24.5591 25.3687 22.4348 25.3687 19.7801C25.3086 17.065 23.3679 15 20.2153 15C17.0605 15 15 17.065 15 19.7799C15 22.4346 17.0001 24.5588 20.0938 24.5588H20.1534L20.1542 24.5591ZM29.8633 55.999H39.0805V40.5521C39.0805 39.7264 39.1406 38.8985 39.3841 38.3088C40.0502 36.6562 41.5668 34.9455 44.1138 34.9455C47.4484 34.9455 48.7831 37.4821 48.7831 41.2014V55.999H58V40.1376C58 31.6408 53.4532 27.6869 47.3887 27.6869C42.4167 27.6869 40.233 30.4589 39.0198 32.347H39.0812V28.3364H29.8638C29.9841 30.9316 29.8631 56 29.8631 56L29.8633 55.999Z"
+        fill="#111827" />
+      </svg></Link>
+      </div>
+</div>
+<div className="mt-8">
+ <div className=" flex flex-col  group  cursor-pointer">
+    <p className="text-sm font-medium text-gray-500 ">Genuine
+                    Visa Advice</p>
+                    <div className="flex items-center justify-between gap-x-2 mt-2">
+<span className="p-2 rounded-full bg-indigo-500 text-white shadow-lg shadow-indigo-200"><svg
+                        xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg></span>
+              
+                <p className="mt-2 text-xs text-slate-500">Visa process by helping you create the necessary documentation
+                </p>
+                    </div>
+                
+            </div>
+</div>
+ 
+ {/* <div className="mt-4">
+ 
+<div className=" flex gap-x-4 items-center mt-4">
+  <div className="flex  items-center flex-col justify-center w-full space-y-4 ">
+    <div className="flex flex-col w-full justify-center  px-4">
+      <div className="flex justify-between items-center mb-1 ">
+<p className="text-sm ">
+   Blogs 
+  </p>
+  <p className="text-xs">
+Lorem Ipsum
+  </p>
+      </div>
+
+  <p className="text-lg font-semibold">
+   43.5K<span className="text-sm">+</span>
+  </p>
+    </div>
+   <div className="flex flex-col w-full justify-center  px-4">
+      <div className="flex justify-between items-center mb-1 ">
+<p className="text-sm ">
+   Blogs 
+  </p>
+  <p className="text-xs">
+Lorem Ipsum
+  </p>
+      </div>
+
+  <p className="text-lg font-semibold">
+   43.5K<span className="text-sm">+</span>
+  </p>
+    </div>
+   <div className="flex flex-col w-full justify-center  px-4">
+      <div className="flex justify-between items-center mb-1 ">
+<p className="text-sm ">
+   Blogs 
+  </p>
+  <p className="text-xs">
+Lorem Ipsum
+  </p>
+      </div>
+
+  <p className="text-lg font-semibold">
+   43.5K<span className="text-sm">+</span>
+  </p>
+    </div>
+  </div>
+  
+</div>
+ </div>  */}
 
 
     
      </div>
  </aside>
  </div>
- <div className="flex flex-wrap ml-9 my-5">
-     <div className="w-full max-w-full sm:w-1/4 mx-auto text-center">
-         <p className="text-lg text-slate-500 py-1">
-             Tailwind CSS Component from <a href="https://www.loopple.com/theme/riva-dashboard-tailwind?ref=tailwindcomponents" className="text-slate-700 hover:text-slate-900" target="_blank">Riva Dashboard Library</a> by <a href="https://www.loopple.com" className="text-slate-700 hover:text-slate-900" target="_blank">Loopple Builder</a>.
-         </p>
-     </div>
- </div>
+
 </div>
     
     </>)

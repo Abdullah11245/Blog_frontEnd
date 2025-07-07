@@ -85,3 +85,4 @@ export const ProfileCardsList = () =>{
     
     </>)
 }
+export default ProfileCardsList;

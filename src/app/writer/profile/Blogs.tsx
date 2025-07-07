@@ -6,7 +6,7 @@ export const Blog = () =>{
 <div className="w-full mx-auto">
    
 <main className="mt-8">
-        <div className=" flex flex-col gap-y-4">
+        {/* <div className=" flex flex-col gap-y-4">
             <div className="flex flex-col gap-y-1">
           <p className="text-3xl font-semibold">Most Viewed</p>
           <p className="text-xl text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia unde, ex ratione aut perferendis beatae! </p>
@@ -210,11 +210,58 @@ export const Blog = () =>{
 
     <Pagination/>
    </div>
+      </div> */}
+<section className=" mx-auto  mb-12 mt-12">
+    <article>
+      <div>
+        <div className="flex items-center justify-between mb-6 px-4 lg:px-0">
+        <h2 className="text-lg font-semibold text-gray-900">Promoted Blogs</h2>
+          <a href="#" className="text-sm text-blue-600 hover:underline">View all</a>
+        </div>
       </div>
-
+        <section className="mt-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
+            <article className="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+                style={{backgroundImage:" url('https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80');"}}>
+                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                    <h3 className="text-center">
+                        <a className="text-white text-2xl font-bold text-center" href="#">
+                            <span className="absolute inset-0"></span>
+                            Top 10 highest paid programming languages of 2021
+                        </a>
+                    </h3>
+                </div>
+            </article>
+            <article className="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+                style={{backgroundImage:" url('https://images.unsplash.com/photo-1569012871812-f38ee64cd54c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');"}}>
+                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                    <h3 className="text-center">
+                        <a className="text-white text-2xl font-bold text-center" href="#">
+                            <span className="absolute inset-0"></span>
+                            Python Frameworks
+                        </a>
+                    </h3>
+                </div>
+            </article>
+            <article className="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+                style={{backgroundImage:" url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');"}}>
+                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                    <h3 className="text-center">
+                        <a className="text-white text-2xl font-bold text-center" href="#">
+                            <span className="absolute inset-0"></span>
+                            The best plugins for Visual Studio Code
+                        </a>
+                    </h3>
+                </div>
+            </article>
+        </section>
+    </article>
+</section>
       <Rejection/> 
 
-    </main> 
+</main> 
    
     <aside
     className="p-4 my-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
