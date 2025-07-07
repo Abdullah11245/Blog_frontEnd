@@ -1,9 +1,11 @@
-'use client';
+'use client'
 import React, { useState } from "react";
+import dynamic from 'next/dynamic';
 import axios from "axios";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // Import the Quill styles
-
+import "react-quill/dist/quill.snow.css";
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+});
 const EditorForm = () => {
   const [Choose, setChoose] = useState(false);
   const [Category, setCategory] = useState("Category");
