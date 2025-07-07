@@ -1,4 +1,26 @@
 {
+  "/_not-found": "app/_not-found.js",
+  "/AdminDashboard/Blogs/page": "app/AdminDashboard/Blogs/page.js",
+  "/AdminDashboard/BookMarks/page": "app/AdminDashboard/BookMarks/page.js",
+  "/AdminDashboard/Likes/page": "app/AdminDashboard/Likes/page.js",
+  "/AdminDashboard/Categories/page": "app/AdminDashboard/Categories/page.js",
+  "/AdminDashboard/SubCategories/page": "app/AdminDashboard/SubCategories/page.js",
+  "/AdminDashboard/Users/page": "app/AdminDashboard/Users/page.js",
+  "/AdminDashboard/page": "app/AdminDashboard/page.js",
+  "/contactUs/page": "app/contactUs/page.js",
+  "/detail/[postId]/page": "app/detail/[postId]/page.js",
+  "/faqs/page": "app/faqs/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/writer/Blogs/page": "app/writer/Blogs/page.js",
+  "/writer/BookMarks/page": "app/writer/BookMarks/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/writer/Followers/page": "app/writer/Followers/page.js",
+  "/writer/Likes/page": "app/writer/Likes/page.js",
+  "/writer/MostViewed&Pormotions/page": "app/writer/MostViewed&Pormotions/page.js",
+  "/writer/editor/page": "app/writer/editor/page.js",
+  "/writer/page": "app/writer/page.js",
+  "/writer/profile/page": "app/writer/profile/page.js",
+  "/writer/uploads/page": "app/writer/uploads/page.js"
 }
