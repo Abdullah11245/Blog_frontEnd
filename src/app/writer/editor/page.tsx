@@ -1,5 +1,6 @@
 'use client'
 import { Sidebar } from "../Sidebar"
+import EditorForm from "./editorForm"
 import Banner from "./banner"
 
 export default   () =>{
@@ -52,7 +53,7 @@ return (<>
             </div>
         </div>
                 
-              
+                <EditorForm/>
                 <Banner/>
             </div>
           
